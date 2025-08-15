@@ -16,7 +16,8 @@
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "edgeToEdgeEnabled": true
+      "edgeToEdgeEnabled": true,
+      "package": "com.anonymous.RMAAmobile"
     },
     "web": {
       "bundler": "metro",
@@ -37,6 +38,14 @@
     ],
     "experiments": {
       "typedRoutes": true
-    }
+    },
+    "extra": {
+      "API_BASE_URL": "http://192.168.7.83/",
+      "router": {},
+      "eas": {
+        "projectId": "979e9669-4bee-4c6b-b16a-ebe69ac1ea24"
+      }
+    },
+    "owner": "marko-native"
   }
 }
