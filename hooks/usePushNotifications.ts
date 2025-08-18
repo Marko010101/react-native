@@ -173,6 +173,9 @@ export const usePushNotifications = (): PushNotificationState => {
   }
 
   useEffect(() => {
+    if (Platform.OS === "web") {
+      return;
+    }
     let mounted = true;
 
     registerForPushNotificationsAsync().then((token) => {

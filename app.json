@@ -4,41 +4,76 @@
     "slug": "RMAA-mobile",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
+    "icon": "./assets/images/logo-rsm.png",
     "scheme": "rmaamobile",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
+
     "ios": {
       "supportsTablet": true
     },
+
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/adaptive-icon.png",
+        "foregroundImage": "./assets/images/logo-rsm.png",
         "backgroundColor": "#ffffff"
       },
       "edgeToEdgeEnabled": true,
       "package": "com.anonymous.RMAAmobile"
     },
+
     "web": {
       "bundler": "metro",
       "output": "static",
-      "favicon": "./assets/images/favicon.png"
+      "favicon": "./assets/images/favicon.png",
+      "meta": {
+        "themeColor": "#000000",
+        "appleMobileWebAppCapable": "yes",
+        "appleMobileWebAppStatusBarStyle": "default"
+      }
     },
+
+    "web.manifest": {
+      "short_name": "RMAA",
+      "name": "RMAA-mobile",
+      "start_url": ".",
+      "scope": "/",
+      "display": "standalone",
+      "theme_color": "#000000",
+      "background_color": "#ffffff",
+      "icons": [
+        {
+          "src": "./assets/images/favicon-192.png",
+          "sizes": "192x192",
+          "type": "image/png",
+          "purpose": "any maskable"
+        },
+        {
+          "src": "./assets/images/favicon-512.png",
+          "sizes": "512x512",
+          "type": "image/png",
+          "purpose": "any maskable"
+        }
+      ]
+    },
+
     "plugins": [
       "expo-router",
       [
         "expo-splash-screen",
         {
-          "image": "./assets/images/splash-icon.png",
+          "image": "./assets/images/logo-rsm.png",
           "imageWidth": 200,
           "resizeMode": "contain",
           "backgroundColor": "#ffffff"
         }
       ]
     ],
+
     "experiments": {
       "typedRoutes": true
     },
+
     "extra": {
       "API_BASE_URL": "http://192.168.7.83/",
       "router": {},
@@ -46,6 +81,7 @@
         "projectId": "979e9669-4bee-4c6b-b16a-ebe69ac1ea24"
       }
     },
+
     "owner": "marko-native"
   }
 }
