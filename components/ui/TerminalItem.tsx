@@ -16,7 +16,7 @@ export type Terminal = {
 type Props = {
   item: Terminal;
   onPress?: () => void;
-  compact?: boolean; // ← list = true (default), details = false
+  compact?: boolean;
 };
 
 function TerminalItem({ item, onPress, compact = true }: Props) {

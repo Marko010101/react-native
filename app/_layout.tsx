@@ -1,4 +1,3 @@
-import { usePushNotifications } from "@/hooks/usePushNotifications";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Stack, useRouter } from "expo-router";
@@ -11,9 +10,6 @@ import { AppThemeProvider, useAppTheme } from "../lib/theme";
 function AppShell() {
   const router = useRouter();
   const { isDark, theme } = useAppTheme();
-  const { notification, expoPushToken } = usePushNotifications();
-
-  const data = JSON.stringify(notification, undefined, 2);
 
   const [loading, setLoading] = useState(true);
   const [isLoggedIn, setIsLoggedIn] = useState(false);

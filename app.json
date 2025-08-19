@@ -30,31 +30,41 @@
         "themeColor": "#000000",
         "appleMobileWebAppCapable": "yes",
         "appleMobileWebAppStatusBarStyle": "default"
-      }
-    },
-
-    "web.manifest": {
-      "short_name": "RMAA",
+      },
       "name": "RMAA-mobile",
-      "start_url": ".",
-      "scope": "/",
+      "shortName": "RMAA",
       "display": "standalone",
-      "theme_color": "#000000",
-      "background_color": "#ffffff",
-      "icons": [
-        {
-          "src": "./assets/images/favicon-192.png",
-          "sizes": "192x192",
-          "type": "image/png",
-          "purpose": "any maskable"
-        },
-        {
-          "src": "./assets/images/favicon-512.png",
-          "sizes": "512x512",
-          "type": "image/png",
-          "purpose": "any maskable"
-        }
-      ]
+      "startUrl": ".",
+      "scope": "/",
+      "backgroundColor": "#ffffff",
+      "themeColor": "#000000",
+
+      "manifest": {
+        "name": "RMAA-mobile",
+        "short_name": "RMAA",
+        "description": "RMAA-mobile PWA",
+        "start_url": ".",
+        "scope": "/",
+        "display": "standalone",
+        "orientation": "portrait",
+        "background_color": "#ffffff",
+        "theme_color": "#000000",
+        "prefer_related_applications": false,
+        "icons": [
+          {
+            "src": "./assets/images/favicon-192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any maskable"
+          },
+          {
+            "src": "./assets/images/favicon-512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+          }
+        ]
+      }
     },
 
     "plugins": [
