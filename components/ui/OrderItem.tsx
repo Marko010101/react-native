@@ -3,9 +3,8 @@ import { StyleSheet } from "react-native";
 import { ThemedText } from "../ThemedText";
 import { ThemedView } from "../ThemedView";
 
-const renderItem = ({ item }: { item: Order }) => {
-  const recipeName =
-    item?.ggddLine?.ggdd?.itemName /* recipe fallback */ ?? "—";
+const orderItem = ({ item }: { item: Order }) => {
+  const recipeName = item?.ggddLine?.ggdd?.itemName ?? "—";
   return (
     <ThemedView style={styles.container}>
       <ThemedText style={styles.boldText}>{`${item.id}`}</ThemedText>
@@ -21,7 +20,7 @@ const renderItem = ({ item }: { item: Order }) => {
   );
 };
 
-export default renderItem;
+export default orderItem;
 
 const styles = StyleSheet.create({
   container: {

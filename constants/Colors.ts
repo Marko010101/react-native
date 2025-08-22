@@ -1,26 +1,44 @@
-const tintColorLight = "#0a7ea4";
-const tintColorDark = "#fff";
-const errorText = "#d44343ff";
+const tintLight = "#0a7ea4";
+const tintDark = "#ffffff";
+const error = "#d44343ff";
+const mediumGray = "#45494dff";
 
-export const Colors = {
+export type ThemeMode = "light" | "dark";
+export type ThemeModeWithSystem = ThemeMode | "system";
+
+type Palette = {
+  text: string;
+  background: string;
+  tint: string;
+  icon: string;
+  tabIconDefault: string;
+  tabIconSelected: string;
+  errorText: string;
+  border: string;
+  mediumGray: string;
+};
+
+export const Colors: Record<ThemeMode, Palette> = {
   light: {
     text: "#11181C",
-    background: "#fff",
-    tint: tintColorLight,
+    background: "#FFFFFF",
+    tint: tintLight,
     icon: "#687076",
     tabIconDefault: "#687076",
-    tabIconSelected: tintColorLight,
-    errorText,
-    border: "#E5E5EA", // <- new, subtle light grey border
+    tabIconSelected: tintLight,
+    errorText: error,
+    border: "#E5E5EA",
+    mediumGray: mediumGray,
   },
   dark: {
     text: "#ECEDEE",
     background: "#151718",
-    tint: tintColorDark,
+    tint: tintDark,
     icon: "#9BA1A6",
     tabIconDefault: "#9BA1A6",
-    tabIconSelected: tintColorDark,
-    errorText,
-    border: "#2C2C2E", // <- new, subtle dark grey border
+    tabIconSelected: tintDark,
+    errorText: error,
+    border: "#2C2C2E",
+    mediumGray: mediumGray,
   },
-};
+} as const;
