@@ -2,7 +2,7 @@ import OrderFilter from "@/components/OrderFIlter";
 import { ThemedText } from "@/components/ThemedText";
 import CustomButton from "@/components/ui/CustomButton";
 import EmptyOrders from "@/components/ui/EmptyOrders";
-import orderItem from "@/components/ui/OrderItem";
+import OrderItem from "@/components/ui/OrderItem";
 import { enumService } from "@/constants/enumService";
 import { formatDateYYYYMMDD } from "@/helpers/DateHelpers";
 import { useWarehouses } from "@/hooks/warehouses/useWarehouses";
@@ -254,7 +254,7 @@ export default function OrdersScreen() {
       <FlatList
         data={items}
         keyExtractor={(i) => String(i.id)}
-        renderItem={orderItem}
+        renderItem={({ item }) => <OrderItem item={item} />} // <-- use component
         ItemSeparatorComponent={() => <View style={{ height: 12 }} />}
         contentContainerStyle={[styles.listContent, { flexGrow: 1 }]}
         onEndReached={loadMore}

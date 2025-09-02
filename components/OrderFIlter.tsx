@@ -16,6 +16,7 @@ import { Modal, Platform, Pressable, StyleSheet, View } from "react-native";
 import DropDownPicker, { ItemType } from "react-native-dropdown-picker";
 import DateTimePicker, { useDefaultStyles } from "react-native-ui-datepicker";
 import { ThemedText } from "./ThemedText";
+import { ThemedView } from "./ThemedView";
 import CustomButton from "./ui/CustomButton";
 
 type Props = {
@@ -100,6 +101,16 @@ export default function OrderFilter(props: Props) {
       startDate: a,
       endDate: b,
     });
+  };
+  const clear = () => {
+    setOperationValue([]);
+    setStatusValue([]);
+
+    setWarehouseValue(null);
+
+    const [a, b] = todayRange();
+    setStartDate(a);
+    setEndDate(b);
   };
 
   const handleRangeChange = buildHandleRangeChange(
@@ -235,8 +246,17 @@ export default function OrderFilter(props: Props) {
               }}
             />
           </View>
-
-          <CustomButton onPress={apply} title="Apply" />
+          <ThemedView style={styles.buttonsContainer}>
+            <CustomButton
+              onPress={clear}
+              title="Clear"
+              style={styles.clearBtn}
+              textStyle={{ color: "#fff" }}
+            />
+            <ThemedView style={{ flex: 1, backgroundColor: "transparent" }}>
+              <CustomButton onPress={apply} title="Apply" />
+            </ThemedView>
+          </ThemedView>
         </Pressable>
       </Pressable>
     </Modal>
@@ -295,6 +315,17 @@ function createStyles(theme: "light" | "dark", isDark: boolean) {
       paddingVertical: 6,
       borderRadius: 12,
       backgroundColor: Colors[theme].mediumGray,
+    },
+    buttonsContainer: {
+      width: "100%",
+      flexDirection: "row",
+      backgroundColor: "transparent",
+      gap: 12,
+    },
+    clearBtn: {
+      backgroundColor: Colors[theme].darkRed,
+      color: "#fff",
+      borderWidth: 0,
     },
   });
 }
